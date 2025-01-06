@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="./vendor/autoload.php" colors="true">
+    <testsuites>
+        <testsuite name="ex1">
+            <file>tests/Unit/Creational/Exercice1Test.php</file>
+        </testsuite>
+        <testsuite name="ex2">
+            <file>tests/Unit/Creational/Exercice2Test.php</file>
+        </testsuite>
+        <testsuite name="ex3">
+            <file>tests/Unit/Creational/Exercice3Test.php</file>
+        </testsuite>
+        <testsuite name="ex4">
+            <file>tests/Unit/Structural/Exercice4Test.php</file>
+        </testsuite>
+    </testsuites>
+</phpunit>

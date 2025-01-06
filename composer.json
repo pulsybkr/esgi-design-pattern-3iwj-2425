@@ -1,0 +1,19 @@
+{
+    "name": "edemots-courses/esgi-design-pattern",
+    "type": "project",
+    "require": {
+        "phpunit/phpunit": "^11.5"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "EdemotsCourses\\EsgiDesignPattern\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Eliot Demots"
+        }
+    ],
+    "minimum-stability": "stable"
+}
