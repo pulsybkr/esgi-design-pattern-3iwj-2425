@@ -12,9 +12,9 @@ Vous aurez à votre disposition des classes déjà créées sur lesquelles vous 
 
 Mettre en œuvre trois méthodes d'expédition :
 
-- Expédition par voie terrestre (camions, livraison en 3 à 5 jours) appelée `GroundShipping`
-- Expédition par voie aérienne (avions, livraison en 1 à 2 jours) appelée `AirShipping`
-- Expédition par voie maritime (bateaux, livraison en 7 à 14 jours) appelée `SeaShipping`
+- Expédition par voie terrestre (camions, livraison en 3 à 5 jours) appelée `GroundShippingFactory`
+- Expédition par voie aérienne (avions, livraison en 1 à 2 jours) appelée `AirShippingFactory`
+- Expédition par voie maritime (bateaux, livraison en 7 à 14 jours) appelée `SeaShippingFactory`
 
 Chaque méthode d'expédition doit permettre :
 
