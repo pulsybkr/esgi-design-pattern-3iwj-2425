@@ -6,16 +6,17 @@ on:
       - main
 
 jobs:
-  tests:
+  changes:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: read
-
+    outputs:
+      ex1: ${{ steps.filter.outputs.ex1 }}
+      ex2: ${{ steps.filter.outputs.ex2 }}
+      ex3: ${{ steps.filter.outputs.ex3 }}
+      ex4: ${{ steps.filter.outputs.ex4 }}
+      ex5: ${{ steps.filter.outputs.ex5 }}
     steps:
-    - uses: actions/checkout@v3
-
-    - uses: php-actions/composer@v6
-
     - uses: dorny/paths-filter@v3
       id: filter
       with:
@@ -28,31 +29,85 @@ jobs:
             - 'src/Exercice3/**'
           ex4:
             - 'src/Exercice4/**'
+          ex5:
+            - 'src/Exercice5/**'
 
+  ex1:
+    needs: changes
+    if: ${{ needs.changes.outputs.ex1 == 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
+    steps:
+    - uses: actions/checkout@v3
+    - uses: php-actions/composer@v6
     - name: Exercice 1
-      if: steps.filter.outputs.ex1 == 'true'
+      id: ex1
       uses: php-actions/phpunit@master
       with:
         testsuite: ex1
         args: --testdox
 
+  ex2:
+    needs: changes
+    if: ${{ needs.changes.outputs.ex2 == 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
+    steps:
+    - uses: actions/checkout@v3
+    - uses: php-actions/composer@v6
     - name: Exercice 2
-      if: steps.filter.outputs.ex2 == 'true'
+      id: ex2
       uses: php-actions/phpunit@master
       with:
         testsuite: ex2
         args: --testdox
 
+  ex3:
+    needs: changes
+    if: ${{ needs.changes.outputs.ex3 == 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
+    steps:
+    - uses: actions/checkout@v3
+    - uses: php-actions/composer@v6
     - name: Exercice 3
-      if: steps.filter.outputs.ex3 == 'true'
+      id: ex3
       uses: php-actions/phpunit@master
       with:
         testsuite: ex3
         args: --testdox
 
+  ex4:
+    needs: changes
+    if: ${{ needs.changes.outputs.ex4 == 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
+    steps:
+    - uses: actions/checkout@v3
+    - uses: php-actions/composer@v6
     - name: Exercice 4
-      if: steps.filter.outputs.ex4 == 'true'
+      id: ex4
       uses: php-actions/phpunit@master
       with:
         testsuite: ex4
+        args: --testdox
+
+  ex5:
+    needs: changes
+    if: ${{ needs.changes.outputs.ex5 == 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
+    steps:
+    - uses: actions/checkout@v3
+    - uses: php-actions/composer@v6
+    - name: Exercice 5
+      id: ex5
+      uses: php-actions/phpunit@master
+      with:
+        testsuite: ex5
         args: --testdox
