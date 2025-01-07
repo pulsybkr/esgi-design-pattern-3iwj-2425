@@ -16,5 +16,8 @@
         <testsuite name="ex5">
             <file>tests/Unit/Structural/Exercice5Test.php</file>
         </testsuite>
+        <testsuite name="ex6">
+            <file>tests/Unit/Structural/Exercice5Test.php</file>
+        </testsuite>
     </testsuites>
 </phpunit>
