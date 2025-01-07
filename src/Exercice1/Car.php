@@ -2,14 +2,14 @@
 
 namespace EdemotsCourses\EsgiDesignPattern\Exercice1;
 
-interface Vehicule {
+interface Vehicle {
     public function accelerate(): float;
-    public function break(): float;
+    public function breaks(): float;
 }
 
-class Car implements Vehicule
+class Car implements Vehicle
 {
-    private float $speed = 0;
+    public float $speed = 0.0;
 
     public function accelerate(): float
     {
@@ -17,7 +17,7 @@ class Car implements Vehicule
         return $this->speed;
     }
 
-    public function break(): float
+    public function breaks(): float
     {
         $this->speed -= 5;
         if($this->speed <= 0 ){
@@ -28,9 +28,9 @@ class Car implements Vehicule
     }
 }
 
-class Truck implements Vehicule
+class Truck implements Vehicle
 {
-    private float $speed = 0;
+    public float $speed = 0.0;
 
     public function accelerate(): float
     {
@@ -38,7 +38,7 @@ class Truck implements Vehicule
         return $this->speed;
     }
 
-    public function break(): float
+    public function breaks(): float
     {
         $this->speed -= 2;
         if($this->speed <= 0 ){
