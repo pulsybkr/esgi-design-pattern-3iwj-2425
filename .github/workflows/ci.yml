@@ -19,6 +19,7 @@ jobs:
       ex6: ${{ steps.filter.outputs.ex6 }}
       ex7: ${{ steps.filter.outputs.ex7 }}
       ex8: ${{ steps.filter.outputs.ex8 }}
+      ex9: ${{ steps.filter.outputs.ex9 }}
     steps:
     - uses: dorny/paths-filter@v3
       id: filter
@@ -40,6 +41,8 @@ jobs:
             - 'src/Exercice7/**'
           ex8:
             - 'src/Exercice8/**'
+          ex9:
+            - 'src/Exercice9/**'
 
   ex1:
     needs: changes
@@ -167,4 +170,20 @@ jobs:
       uses: php-actions/phpunit@master
       with:
         testsuite: ex8
+        args: --testdox
+
+  ex9:
+    needs: changes
+    if: ${{ needs.changes.outputs.ex9 == 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
+    steps:
+    - uses: actions/checkout@v3
+    - uses: php-actions/composer@v6
+    - name: Exercice 9
+      id: ex9
+      uses: php-actions/phpunit@master
+      with:
+        testsuite: ex9
         args: --testdox
