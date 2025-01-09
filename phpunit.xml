@@ -28,5 +28,8 @@
         <testsuite name="ex9">
             <file>tests/Unit/Behavioral/Exercice9Test.php</file>
         </testsuite>
+        <testsuite name="ex10">
+            <file>tests/Unit/Behavioral/Exercice10Test.php</file>
+        </testsuite>
     </testsuites>
 </phpunit>
