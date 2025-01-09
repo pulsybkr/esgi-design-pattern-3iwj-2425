@@ -31,5 +31,8 @@
         <testsuite name="ex10">
             <file>tests/Unit/Behavioral/Exercice10Test.php</file>
         </testsuite>
+        <testsuite name="TheGildedRose">
+            <directory>tests/Unit/TheGildedRose</directory>
+        </testsuite>
     </testsuites>
 </phpunit>
